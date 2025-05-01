@@ -1,0 +1,46 @@
+https://en.wikipedia.org/wiki/PNG#File_format
+examples for IHDR CHunk left off
+
+
+
+
+hex value test:
+
+     PNG signature
+|---------------------|
+89 50 4e 47 0d 0a 1a 0a 
+
+IHDR length  chunk type
+|---------| |---------| |--height-| |--width--|
+00 00 00 0d 49 48 44 52 00 00 00 ec 00 00 00 d6 
+
+08 = 8 bits per pixel/bit depth
+03 = color type 3(grayscale and alpha)
+00 = compression method
+00 = filter method
+00 = interlace method
+e5 ec 9e ed = CRC-32(research more) able to ignore??
+
+
+
+PNG signature
+89 50 4e 47 0d 0a 1a 0a 
+
+
+IHDR
+00 00 00 0d 49 48 44 52 00 00 00 ec 00 00 00 d6 08 03 00 00 00 e5 ec 9e ed 
+
+
+PLTE                    RGB luminence values every 3 bytes
+|-Length--| |chunktype| |R-G -B|
+00 00 01 2f 50 4c 54 45 ff ff ff fe 00 00 00 00 00 00 00 05 34 34 34 e8 e8 e8 04 05 00 7e 01 02 fd 00 02 7d 7d 7d 00 01 03 fc 34 37 ff fe ff 36 15 14 34 25 24 fc fc fc 95 95 95 fc 1b 1b ef ef ef fc 25 1e fe df e2 fe ba bb 76 76 76 22 00 05 e0 01 04 2a 00 00 25 25 25 f2 f0 ed a8 a8 a8 cd cd cd 56 56 56 d4 d4 d4 2d 2d 2d 11 01 04 41 00 03 1e 00 01 d5 02 03 6d 01 06 b0 b0 b0 fc 43 43 fe 95 8f df df df 4e 01 00 b4 01 06 fd d5 d9 00 0b 0b fc 87 89 69 69 69 ff e8 e2 61 01 01 cf 18 14 87 01 03 fd 2d 2c c5 03 04 66 33 39 56 00 03 ff 6c 6c 4b 01 08 17 00 00 87 87 87 5f 5f 5f c2 be c2 6f 76 76 bd d2 d3 80 46 48 94 73 70 8f 97 94 9d 94 95 4b 4b 4b ba 02 10 00 04 11 55 09 07 5b 52 53 e9 e2 e9 df ed e8 6c 00 07 ae 00 0c 44 34 30 de 12 21 fb c0 b5 bd 1b 26 19 33 2f d5 2f 33 31 1c 0e f5 d9 cc fa 8c 93 fa 7f 7a f9 6c 73 4b 2c 2b 4d 38 2c 19 19 19 ea 07 00 4b 24 1d 98 a7 a6 9a 02 04 78 28 2c 6e 2e 36 c3 07 18 5f 5b 61 57 28 2f 32 2a 2f 2f fb 5c ee <---CRC---| last 4
+
+IDAT
+|-Length--| |chunktype|
+00 00 08 8b 49 44 41 54 78 9c ed 9d 09 7b d3 36 18 80 63 89 ba aa f1 a6 92 f5 4c 69 9b 34 e1 28 59 47 4b 97 a5 f4 58 cb d1 32 a0 8c 95 6d c0 c8 c6 18 f0 ff 7f c3 e4 d8 96 3e a5 4e 13 25 3e 14 5b 2f d0 87 36 91 ac 37 9f 2c 4b ae 24 97 4a 06 83 c1 60 30 18 0c 06 83 c1 60 30 18 0c 06 83 c1 60 30 18 0c 06 c3 b8 d0 84 df 3f 12 e5 29 55 06 17 8b 96 28 55 ce b6 9c 82 ee 41 f5 9a 1a 95 d5 c1 b2 b4 74 54 51 cd f6 20 71 55 5a 5a 40 aa 1c 0d 91 6b 69 55 39 db 85 c4 65 4b 23 c8 0e 8e 2c e3 28 27 b2 83 23 5b ca 8f ec 50 91 2d 54 35 ce 8b ec 50 d5 38 2f b2 13 d6 40 c1 cb b7 a2 2c c6 50 96 4a 79 d1 f0 5b f6 9f 91 22 4b 2f 17 6f 6c 51 2a 72 a3 ee 82 27 a0 82 54 8d a9 54 30 1a 7c 4b 5d f7 48 31 57 cc 64 5d 57 fe cc e2 b0 a5 52 56 3f 23 c7 56 42 8e ac 64 1b e4 ec d2 12 93 55 cb d5 46 0b ae 1b 46 96 c6 1a 5b c0 0c b2 1d 85 00 d8 0e 3a be 22 37 1f 16 a2 55 e5 c8 ce b0 74 57 e6 3a 9a ec d4 2c e7 f1 ec c9 b4 2a 8f 44 f2 d9 db f0 94 bd cd 73 7d 3c fb 48 39 db 93 27 2c 59 48 39 2e d9 d2 26 6c 17 5a 96 12 c4 b2 76 40 ea a7 50 f6 29 78 61 47 2d 5b 46 13 96 6a 33 36 d9 29 91 a9 e3 34 bd f2 0f ef 4a 2c 02 65 d7 60 be 6b a2 cd 76 76 54 72 f5 65 1d 90 ef 94 91 35 b2 46 36 52 16 2b cb 12 23 6b 64 b3 97 75 c7 3c 67 87 95 55 75 8d 53 56 74 88 29 ec 54 d4 9c 26 f1 65 89 f7 a7 8f 37 11 2f 5c 92 15 5d 3c 26 5b 0b 0b 8c d5 23 7b 8a 91 dd 4d 6b 23 2c c9 8e d1 75 64 9d f4 29 2f a2 01 67 cd 40 b1 ab da 57 36 f4 f5 22 fb 8c 27 c6 68 cd 15 45 71 7f 61 dd 6c ff e7 ce 28 b2 0e eb 4e 77 53 b3 51 c1 26 2c b0 f2 b8 00 dc 8d 7e 7e 5c 5b 0c a9 a3 b0 1a 7b 36 e4 bb 3e fc 48 44 fc c9 ad 7d 9e 7a 7f ed 85 c8 f7 c5 5a bd be 5c f7 5f a8 bd 54 96 3d af d5 83 5c eb cb b5 75 78 f7 5c 39 a0 07 d5 6b 55 ff 76 78 b5 fa ea d7 25 4e a3 13 46 96 79 5c 9f eb c3 6b 10 59 ab 21 52 2f fd 76 f1 95 df e6 be 38 f5 f2 0b 5f 51 96 ed 84 49 1b 4b 9d 37 af 78 ae d5 ca 81 72 45 9e 01 27 da ef 5e a0 20 81 06 b9 d3 2f f5 1f f0 5d 20 1d f9 cf 06 f9 36 e0 6b 1d 45 57 29 df 3b df 82 6c 67 94 23 cb 65 b1 83 be b9 11 79 30 cb 93 75 23 53 7f 1f ca f6 26 7a b0 d5 2b ab e8 18 ad 7d 3d 2e 59 dc 47 d6 1a 20 1b 59 ae 44 64 2d 2b 36 59 fd 23 6b c5 17 d9 42 c9 f6 ab c6 83 64 23 cb a5 bb 6c bf c8 0e 38 67 a3 3b 1c 97 64 c7 77 2d 9a 6c 7c 0d d4 88 d5 38 ba 60 ba cb 46 44 36 ec 22 c8 b2 d4 0d 99 dc c8 4a b2 72 f1 ae 73 59 57 be 2d 3f d7 a7 31 66 0d 94 c3 6f b1 3b 2d fd ce 59 2c cb ee fd 20 b8 cb 03 eb 52 77 fe cf bb 9c b7 16 e9 44 78 90 ce d2 f4 2e 67 7a a9 a3 77 64 2d f2 1a d6 5c 97 ff 9f 96 f6 7a 3a c2 51 b2 fe 20 22 a8 e3 7d de a4 8f 2c 21 f3 6e d4 98 82 d5 e1 77 a0 e0 fd 64 e5 51 01 b1 62 b1 4d ae 53 41 e6 a3 07 50 2c b2 a2 dc dd 51 4c 64 35 86 1f 42 20 1c 83 6c 62 ad 71 b4 2c ab ce 7b d2 67 dd a7 85 0a fe 4d 8e 6c f4 a5 15 ca a6 4b 82 7d 63 1d 65 0b 15 d9 42 c9 26 36 10 e8 23 4b e9 5e 1c d7 cc d1 64 13 1b 08 cc cb 9d 0a 37 9c b2 e2 be cb 83 ec 55 91 75 29 0d 5d 73 5f 8d e9 36 67 6e 3b ef d5 78 fb c6 8f 82 1b 79 90 ed 17 59 d7 1b c9 65 e4 27 91 46 35 f6 65 63 19 b7 8c 47 1a d5 38 90 cd cc 91 93 5e 35 d6 22 b2 e9 55 e3 cc 6d d3 ab c6 1a d4 e3 34 ab 71 e6 b6 05 93 4d 7e 3c 9b ff 6a 4c c8 6b f0 a6 b9 ec c3 6a a5 27 ab 41 5c 53 bb 49 fe 56 13 d9 e4 7e fd d1 3b 27 24 43 cd a0 4c 49 ca 76 e0 4d 7f 0d ce da 24 7f f3 9e bd 5d 0f 29 4c 20 d1 87 82 c9 26 3e cd 40 1f 52 98 66 a0 0f 05 93 35 d5 78 14 59 67 02 22 1b 9b 2c 43 73 59 6b 6c d9 83 0f 95 90 8b f7 60 72 f5 52 47 87 4e 93 47 07 4c da 7e f3 17 2f 6d e5 83 fa d6 24 62 0b 99 e7 53 eb 62 da fc 22 3a d7 60 b8 ee 41 4e f1 72 3d 98 38 bf 8c 8e cb 70 da bc fa 92 08 be a0 dc 9d 12 eb 21 30 3e cd da 32 80 34 6d db 5f 4f 81 b7 10 7a 0e ca ad bc 1e 42 ac fd 76 a9 b7 ae c7 c1 dd 45 1a 8e 6d 37 75 a9 c6 4d 7f e6 98 07 42 2f 40 8c 46 58 ea 12 ea d2 ae 2c ee aa 62 7f 11 93 16 b2 a4 b9 85 bc f2 60 16 09 69 11 d3 38 0b e0 83 c8 f2 6a ac b6 62 2b 41 9a 38 28 96 b7 8c 49 8b 25 a5 09 a2 df c2 c3 04 31 b2 46 56 01 0a 65 91 7d de d3 18 a7 d7 36 f7 cc fe 6b b2 eb 20 f7 8d 69 eb 06 7a b9 81 1a 34 d3 36 29 59 79 49 5a d3 16 2b 52 63 8c ac b4 29 47 13 fa c5 34 d5 52 41 56 7c 97 c4 a6 1c 2c b2 65 b1 5d ca 93 c7 27 bb 62 c7 93 dd 54 43 cb 0e b5 0b b7 5b 61 a5 49 60 bb 15 89 19 c4 2f e6 ce 46 ba 91 25 64 e3 2c 38 99 d8 d1 d5 47 72 ea c0 cd af 36 d2 ed 39 12 6b 03 8b 83 a7 bd ad 59 c1 64 d3 74 cd 5c b6 50 91 2d 94 6c 9a ae 99 cb 16 2a b2 85 92 4d d3 35 73 d9 84 c7 04 bd eb d9 36 50 9a b2 b4 34 53 a9 54 43 de 37 38 4b 8d a8 f5 68 63 cb 5a a4 23 8e d1 78 f0 37 3f 74 b5 32 93 c2 1e ec 65 c0 3a aa 07 ec ef 3b e7 49 c8 12 d2 72 f8 31 ea e8 18 1e 3d 71 55 f9 d3 dc f4 fa e4 dd 3a e5 dd 3d 4f a2 16 5b 4c b6 7b af d4 03 a3 cd 04 f6 d0 1c d6 77 53 dc 62 b5 9d 56 42 b2 98 ff 3a a2 77 27 a4 74 74 85 6c 08 fb ec 93 90 65 7f 5b 3c b0 28 ce 8d 33 c7 91 45 46 d6 c8 1a d9 89 92 75 b0 d3 24 bd 3d 9e 51 15 83 8c fc dc 74 94 75 70 0b ee 61 30 9e 2c fc c4 34 94 45 b6 dd 8c 71 6a 2e c8 48 47 59 e9 9c 1d b7 1a c3 c4 2d 78 8c f5 0c 65 cb b3 37 43 66 ff 39 b9 25 f8 d8 19 27 b2 9d 8f 3c a3 e9 e9 7f 9f dc 14 07 49 a1 3f 3c 1c f7 41 04 36 c6 1a ef 91 87 20 ab 9f b6 b3 16 8b 02 ca 3e 1c 4f f6 9e 24 eb a6 dd 0b 1e 82 04 65 f5 c3 c8 c6 23 ab 7d 35 1e dd b5 57 36 b5 81 ba 02 89 c9 9a c8 66 4c 71 64 5d 97 c9 f2 3e 2c be 17 36 50 c3 f5 92 e5 0e 22 21 0f cf fc 79 30 de 97 4f ac 1a eb d6 1e 53 18 59 e7 61 b0 63 39 19 6e 1e 02 09 df 1e 6c eb 0e 23 fb 49 bf 4b 8f cb 64 6b cb 9c 9d 96 b8 b3 dd 1a bc 27 35 fb 4c e0 bd f0 46 7b 91 e7 b4 a8 61 03 e5 ba ee 4a 79 85 b3 8a 6a 21 fb b8 39 4c 64 4f b7 78 8a 1a 3a 02 59 ad 50 b7 44 35 0b ae 3c cb 77 9d 3f 9b ea cc 3e 1b fc 38 23 e2 6d b5 09 9e 28 b5 0e 73 a3 94 ea 26 2b b3 0e ce df 21 9e dd c4 64 4f e1 4c c4 2c 87 ad ea ac 0b 55 23 5b 6c 59 ab 48 b2 f9 88 ac 53 24 59 84 4d 35 ce 65 64 71 91 64 3d 1a 42 4a 1e 15 f0 11 91 f7 b8 17 34 b1 b2 e5 9b 00 71 f7 fc 65 7b 17 cc a9 21 bb 3b 2f 77 ba 3f 67 5f 4f 60 8a f8 16 ae a4 8e 18 fb 61 e7 1e 1c b7 b6 51 30 87 cb c1 e8 3e 4c a1 d9 28 e7 6a 28 5f a4 c9 7a f0 f4 33 9f 66 82 9c 36 94 7d 86 91 8d fd 99 21 e8 50 9e 07 33 49 ba e0 d9 6b de a8 9e cb 62 49 b6 8d ed 60 4d a8 8d 3e c3 a7 2f 4c 92 6a 0f 87 a2 e5 91 22 6b b5 bd b8 fa 17 28 74 08 12 4c b0 2b 94 45 6d d8 18 7b b2 e1 0b 87 83 f3 99 08 8c ac 91 9d 78 a8 d4 40 3d 83 f3 2e da 8e 77 85 f5 b9 3f 38 a7 09 00 ca da de a5 47 2c 96 64 d7 59 be 4e f2 70 92 9b e0 10 4a 2f 55 63 7e ff 1f 3e be 34 0f d5 d8 eb 5d 2c 88 a9 e7 d5 2f e0 ee 79 e3 cb c5 d7 6b 5f 83 79 e1 0b 79 88 6c f7 09 a9 82 55 54 f3 2b b4 cd ba 88 ab 2b e0 95 ac cb 99 00 ab a0 e6 a2 d5 ac 4b 93 30 46 36 af 18 d9 bc 62 64 f3 8a 91 cd 2b c5 96 cd 63 37 31 64 ea 36 60 94 3d 03 27 07 2a 2f 17 14 b7 97 f3 48 af 5c 3e 07 3b 06 83 c1 60 30 18 0c 06 83 c1 60 30 18 0c 06 99 ff 01 b3 5b 65 80 ac ef c7 56 <---CRC---| last 4
+
+IEND
+00 00 00 00 49 45 4e 44 ae 42 60 82
+|-Length--| |chunktype| |---CRC---|
+
+
